@@ -1,0 +1,8 @@
+body {
+    width: 600px;
+}
+
+#add-new-spell {
+    display: block;
+    margin: 0 auto;
+}
