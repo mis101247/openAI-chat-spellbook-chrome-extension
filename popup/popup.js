@@ -24,17 +24,21 @@ async function createForm() {
     inputForDisplay.classList.value = "form-control";
 
     const inputForContent = document.createElement("input");
+    inputForContent.readOnly = true;
     inputForContent.value = action.action;
     inputForContent.classList.value = "form-control";
-    inputForDisplay.readOnly = true;
 
     const editButton = document.createElement("button");
     editButton.type = "button";
     editButton.style.display = "inline";
     editButton.classList.value = "btn btn-primary";
     editButton.innerHTML = `<i class="fa fa-pencil"></i>`;
-    editButton.addEventListener("click", () => {
-      handleEditClick(editButton).catch(console.error);
+    editButton.addEventListener("click", async () => {
+      try {
+        await handleEditClick(editButton);
+      } catch (error) {
+        console.error(error);
+      }
     });
     const deleteButton = document.createElement("button");
     deleteButton.type = "button";
@@ -188,8 +192,12 @@ async function addNewSpell() {
   editButton.style.display = "none";
   editButton.classList.value = "btn btn-primary";
   editButton.innerHTML = `<i class="fa fa-pencil"></i>`;
-  editButton.addEventListener("click", () => {
-    handleEditClick(editButton).catch(console.error);
+  editButton.addEventListener("click", async () => {
+    try {
+      await handleEditClick(editButton);
+    } catch (error) {
+      console.error(error);
+    }
   });
 
   const saveButton = document.createElement("button");
