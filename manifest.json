@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Spellbook for OpenAI Chat",
     "description": "Quickly cast a spell in chat",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "permissions": [
         "contextMenus",
         "storage"

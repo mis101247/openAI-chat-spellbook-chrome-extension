@@ -2,7 +2,6 @@
 
 const AutoFill = async () => {
   const { tempText } = await chrome.storage.local.get("tempText");
-  await chrome.storage.local.remove("tempText");
   if (tempText) {
     const textarea = document.querySelector("textarea");
     if (textarea) {
@@ -16,6 +15,7 @@ const AutoFill = async () => {
       const button = textarea.nextElementSibling;
       if (textarea.nextElementSibling.tagName === "BUTTON") {
         button.click();
+        await chrome.storage.local.remove("tempText");
       }
     }
   }
