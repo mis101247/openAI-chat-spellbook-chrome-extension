@@ -23,11 +23,16 @@
 
 - Using the extension
 
-  https://user-images.githubusercontent.com/15373178/223541715-aa3d9d3f-7f6b-4609-b69c-797237ffa0ce.mp4
+
+https://user-images.githubusercontent.com/15373178/223698064-1971049a-4203-441c-9c0e-0d5dd2bb82d3.mp4
+
+
 
 - Adding, deleting, and modifying spells
 
-  https://user-images.githubusercontent.com/15373178/223544612-303192b4-f90b-44ed-866f-fc55498ea619.mp4
+
+https://user-images.githubusercontent.com/15373178/223698079-a955d230-5d34-4894-b490-5cfcde26b525.mp4
+
 
 # About this project
 
