@@ -184,7 +184,7 @@ async function addNewSpell() {
   deleteButton.innerHTML = `<i class="fa fa-trash"></i>`;
   deleteButton.addEventListener("click", () => {
     handleDeleteClick(deleteButton).catch(console.error);
-    document.querySelector("#add-new-spell").style.display = "inline";
+    document.querySelector("#add-new-spell").style.display = "block";
   });
 
   const editButton = document.createElement("button");
@@ -229,12 +229,15 @@ async function handleDeleteClick(deleteButtonElement) {
   const id = tr.dataset.id;
   const { allActions } = await chrome.storage.local.get("allActions");
 
+  tr.remove();
   // Find the action with the same id
   const action = allActions.find((action) => action.id === id);
+  if (!action) {
+    return;
+  }
   allActions.splice(allActions.indexOf(action), 1);
 
   // Update the storage
   await chrome.storage.local.set({ allActions });
 
-  tr.remove();
 }
