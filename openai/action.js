@@ -23,6 +23,8 @@ const AutoFill = async () => {
 
 chrome.runtime.sendMessage("ChatGPT_On", (response) => {
   if (response === "OK") {
-    AutoFill();
+    setTimeout(() => {
+      AutoFill();
+    }, 2000);
   }
 });
