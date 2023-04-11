@@ -11,12 +11,12 @@ const AutoFill = async () => {
         query = query.substring(0, 3000);
       }
 
+      textarea.focus();
       textarea.value = query;
-      const button = textarea.nextElementSibling;
-      if (textarea.nextElementSibling.tagName === "BUTTON") {
-        button.click();
-        await chrome.storage.local.remove("tempText");
-      }
+      textarea.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+      textarea.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter" }));
+
+      await chrome.storage.local.remove("tempText");
     }
   }
 };
